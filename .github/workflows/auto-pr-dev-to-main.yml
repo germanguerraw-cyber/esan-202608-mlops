@@ -88,7 +88,7 @@ jobs:
         with:
           # Si tu org bloquea creación de PRs con GITHUB_TOKEN,
           # crea un PAT con scope repo como secreto GH_PAT y este fallback lo usará:
-          github-token: ${{ secrets.GH_PAT || github.token }}
+          github-token: ${{ github.token }}
           script: |
             const { owner, repo } = context.repo;
             const base = "${{ steps.ctx.outputs.base }}";
